@@ -1,0 +1,27 @@
+defaults:
+  - _self_
+
+model:
+  name: st_graph_attention_transformer
+  d_model: 64
+  n_heads: 4
+  n_temporal_layers: 2
+  n_gat_layers: 2
+  gat_heads: 4
+  dropout: 0.1
+  seq_len: 48
+  horizons: [1, 6, 24, 168]
+  quantiles: [0.05, 0.25, 0.5, 0.75, 0.95]
+
+train:
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  epochs: 100
+  patience: 10
+  batch_size: 32
+  grad_clip_norm: 1.0
+  seed: 42
+
+graph:
+  type: dynamic_wind          # dynamic_wind | static_knn | static_distance
+  k_neighbors: 4

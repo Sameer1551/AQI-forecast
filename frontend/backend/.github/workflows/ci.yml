@@ -1,0 +1,16 @@
+name: CI
+on: [pull_request, push]
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt -r requirements-dev.txt
+      - run: ruff check src tests
+      - run: black --check src tests
+      - run: mypy src
+      - run: pytest tests/ -v --cov=src --cov-report=xml
+      - uses: codecov/codecov-action@v4

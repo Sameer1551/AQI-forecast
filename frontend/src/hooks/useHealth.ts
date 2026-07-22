@@ -10,8 +10,13 @@ export function useHealth() {
     queryFn: async () => {
       try {
         const res = await getHealth();
-        setDemoMode(false);
-        setApiOnline(true);
+        if (res.status === 'ok') {
+          setDemoMode(false);
+          setApiOnline(true);
+        } else {
+          setDemoMode(true);
+          setApiOnline(false);
+        }
         return res;
       } catch {
         setDemoMode(true);

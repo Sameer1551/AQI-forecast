@@ -98,6 +98,7 @@ export default function LiveMap() {
         ref={mapRef}
         center={[20.5937, 78.9629]}
         zoom={5}
+        style={{ height: '100%', width: '100%' }}
         className={styles.map}
         zoomControl={true}
         attributionControl={true}
