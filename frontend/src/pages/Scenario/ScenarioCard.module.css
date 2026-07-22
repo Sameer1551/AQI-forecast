@@ -1,0 +1,68 @@
+.card {
+  padding: 14px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.active {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 1px var(--accent-cyan), var(--shadow-card);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.icon {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.desc {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.sliderRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sliderLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  min-width: 45px;
+}
+
+.slider {
+  flex: 1;
+  accent-color: var(--accent-cyan);
+  height: 4px;
+}
+
+.sliderValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  min-width: 45px;
+  text-align: right;
+}
+
+.windControls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

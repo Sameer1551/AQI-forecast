@@ -1,0 +1,104 @@
+# .gitignore for AQI Forecast project
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.pyc
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Secrets — NEVER commit the real .env
+.env
+!.env.example
+
+# Data (managed by DVC — commit .dvc files, not the data itself)
+data/raw/
+data/interim/
+data/feature_store/
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/feature_store/.gitkeep
+
+# Model checkpoints
+models/*.pt
+models/*.onnx
+models/*.pth
+!models/.gitkeep
+
+# Logs
+logs/*.jsonl
+logs/*.log
+!logs/.gitkeep
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Hydra outputs
+outputs/
+.hydra/
+
+# DVC internal
+.dvc/cache/
+.dvc/tmp/
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+
+# Build / packaging
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# CodeCarbon
+emissions.csv

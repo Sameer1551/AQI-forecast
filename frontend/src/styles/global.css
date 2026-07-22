@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import './tokens.css';
+@import './typography.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+select {
+  font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Leaflet dark theme overrides */
+.leaflet-container {
+  background: var(--bg-base) !important;
+  font-family: 'Inter', sans-serif !important;
+}
+.leaflet-control-attribution {
+  background: hsla(220, 30%, 12%, 0.8) !important;
+  color: var(--text-muted) !important;
+  font-size: 10px !important;
+}
+.leaflet-control-attribution a {
+  color: var(--text-secondary) !important;
+}
+.leaflet-bar a {
+  background: var(--bg-elevated) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+.leaflet-bar a:hover {
+  background: var(--bg-surface) !important;
+}
+
+/* Animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink-border {
+  0%, 100% {
+    border-color: var(--aqi-unhealthy);
+    box-shadow: 0 0 12px hsla(0, 72%, 51%, 0.3);
+  }
+  50% {
+    border-color: hsla(0, 72%, 51%, 0.4);
+    box-shadow: 0 0 4px hsla(0, 72%, 51%, 0.1);
+  }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 10px); }
+  50.001% { transform: translate(20px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes spin-compass {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Leaflet custom marker styles */
+.maadg-marker-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+
+.maadg-marker {
+  position: relative;
+  width: calc(var(--marker-radius) * 2);
+  height: calc(var(--marker-radius) * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maadg-marker-dot {
+  width: calc(var(--marker-radius) * 2);
+  height: calc(var(--marker-radius) * 2);
+  border-radius: 50%;
+  background: var(--marker-color);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 8px var(--marker-color);
+}
+
+.maadg-pulse-ring {
+  position: absolute;
+  width: calc(var(--marker-radius) * 2);
+  height: calc(var(--marker-radius) * 2);
+  border-radius: 50%;
+  border: 2px solid var(--marker-color);
+  animation: pulse-ring 1.5s ease-out infinite;
+}

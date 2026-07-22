@@ -1,0 +1,136 @@
+.page {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.driftBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background: hsla(142, 71%, 45%, 0.12);
+  border: 1px solid var(--status-ok);
+  color: var(--status-ok);
+}
+
+.bannerWarning {
+  background: hsla(48, 96%, 53%, 0.12);
+  border-color: var(--status-warning);
+  color: var(--status-warning);
+}
+
+.bannerAlert {
+  background: hsla(0, 72%, 51%, 0.12);
+  border-color: var(--status-error);
+  color: var(--status-error);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.metricCard {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.metricLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.psiGauge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.psiStatus {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.badgeWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.bigBadge {
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.badgeGreen {
+  background: hsla(142, 71%, 45%, 0.2);
+  color: var(--status-ok);
+  border: 1px solid var(--status-ok);
+}
+
+.badgeRed {
+  background: hsla(0, 72%, 51%, 0.2);
+  color: var(--status-error);
+  border: 1px solid var(--status-error);
+}
+
+.metricValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metricSub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.chartCard {
+  padding: 20px;
+}
+
+.chartCard h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.chartNote {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

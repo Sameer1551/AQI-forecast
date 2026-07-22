@@ -1,0 +1,124 @@
+.section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+.gaugeCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-row: span 2;
+}
+
+.pollutants {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.pollutantCard {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pName {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.pUnit {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.pValue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.pSubAqi {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.pBar {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--bg-elevated);
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.pBarFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 800ms ease-out;
+}
+
+.weatherCard {
+  grid-column: span 2;
+}
+
+.weatherRow {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.weatherItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.weatherItem svg {
+  color: var(--accent-cyan);
+}
+
+.wLabel {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.wValue {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+  .gaugeCard {
+    grid-row: auto;
+  }
+  .pollutants {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .weatherCard {
+    grid-column: span 1;
+  }
+  .weatherRow {
+    gap: 12px;
+  }
+}

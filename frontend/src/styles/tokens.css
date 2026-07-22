@@ -1,0 +1,49 @@
+:root {
+  /* Backgrounds */
+  --bg-base: hsl(220, 40%, 8%);
+  --bg-surface: hsl(220, 30%, 12%);
+  --bg-elevated: hsl(220, 25%, 16%);
+  --bg-glass: hsla(220, 30%, 18%, 0.6);
+  --border: hsla(220, 20%, 40%, 0.35);
+  --border-glass: hsla(220, 20%, 60%, 0.15);
+
+  /* Accents */
+  --accent-cyan: hsl(190, 90%, 55%);
+  --accent-cyan-dim: hsla(190, 90%, 55%, 0.25);
+  --accent-blue: hsl(215, 80%, 60%);
+  --accent-purple: hsl(265, 70%, 65%);
+
+  /* Text */
+  --text-primary: hsl(210, 20%, 92%);
+  --text-secondary: hsl(210, 15%, 65%);
+  --text-muted: hsl(210, 12%, 45%);
+
+  /* AQI categories */
+  --aqi-good: hsl(142, 71%, 45%);
+  --aqi-moderate: hsl(48, 96%, 53%);
+  --aqi-sensitive: hsl(28, 96%, 53%);
+  --aqi-unhealthy: hsl(0, 72%, 51%);
+  --aqi-very-unhealthy: hsl(280, 67%, 44%);
+  --aqi-hazardous: hsl(0, 50%, 28%);
+
+  /* Edge types */
+  --edge-transport: hsl(190, 90%, 55%);
+  --edge-weather: hsl(215, 80%, 60%);
+  --edge-traffic: hsl(28, 96%, 53%);
+  --edge-land-use: hsl(142, 71%, 45%);
+  --edge-sensor: hsl(265, 70%, 65%);
+
+  /* Status */
+  --status-ok: hsl(142, 71%, 45%);
+  --status-warning: hsl(48, 96%, 53%);
+  --status-error: hsl(0, 72%, 51%);
+
+  /* Spacing */
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 60px;
+  --header-height: 56px;
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}

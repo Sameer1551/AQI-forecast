@@ -1,0 +1,215 @@
+.page {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modelCard {
+  padding: 20px;
+}
+
+.modelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.modelHeader h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.archBadge {
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-glass);
+  font-size: 0.7rem;
+  color: var(--accent-cyan);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.modelInfo {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.infoItem svg {
+  color: var(--accent-cyan);
+}
+
+.coverageCard {
+  padding: 20px;
+}
+
+.coverageCard h3,
+.rmseCard h3,
+.extremeCard h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.coverageTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.coverageTable th {
+  text-align: left;
+  padding: 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.coverageTable td {
+  padding: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.monoCell {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.statusOk {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--aqi-good);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.statusWarning {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--status-warning);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.rmseCard {
+  padding: 20px;
+}
+
+.extremeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.extremeCard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gaugeWrap {
+  margin: 8px 0;
+}
+
+.extremeCaption {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.researchToggle {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggleSlider {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all 200ms ease;
+}
+
+.toggleSlider::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: all 200ms ease;
+}
+
+.toggle input:checked + .toggleSlider {
+  background: var(--accent-cyan-dim);
+  border-color: var(--accent-cyan);
+}
+
+.toggle input:checked + .toggleSlider::after {
+  transform: translateX(20px);
+  background: var(--accent-cyan);
+}
+
+.toggleLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .extremeGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,42 @@
+.compass {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  filter: drop-shadow(0 0 4px var(--accent-cyan));
+  animation: arrow-pulse 2s ease-in-out infinite;
+}
+
+.tip {
+  filter: drop-shadow(0 0 6px var(--accent-cyan));
+}
+
+.info {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.speed {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.dir {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+}
+
+@keyframes arrow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

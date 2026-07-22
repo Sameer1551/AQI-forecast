@@ -1,0 +1,96 @@
+.panel {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.tooltip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.tooltipText {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease;
+}
+
+.tooltip:hover .tooltipText {
+  opacity: 1;
+}
+
+.factors {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.factorRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slide-up-fade 400ms ease-out both;
+}
+
+.factorIcon {
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.factorText {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  flex: 1;
+  min-width: 0;
+}
+
+.barContainer {
+  width: 80px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-elevated);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+  animation: bar-grow 800ms ease-out both;
+}
+
+@keyframes bar-grow {
+  from { width: 0; }
+}
+
+.footnote {
+  margin-top: 12px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
+}

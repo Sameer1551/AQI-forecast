@@ -1,0 +1,19 @@
+name: CD
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Docker image
+        run: docker build -t aqi-forecast:${{ github.ref_name }} .
+      - name: Run smoke test against the built image
+        run: |
+          docker run -d -p 8000:8000 --name aqi_smoke aqi-forecast:${{ github.ref_name }}
+          sleep 5
+          curl -f http://localhost:8000/health || (docker logs aqi_smoke && exit 1)
+          docker stop aqi_smoke
+      # Push step (to a registry of your choice) omitted — configure once you
+      # pick a deployment target (Ch.16.5).
